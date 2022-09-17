@@ -15,11 +15,26 @@ body{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Jost', sans-serif;
+    background-color: var(--primary-color3);
 }
 
 /* logo */
 
-.designo-logo{
+.logo-designo{
     width: 202px;
     height: 27px;
 }
+
+
+/* ul tags */
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
