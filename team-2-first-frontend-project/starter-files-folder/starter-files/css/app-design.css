@@ -1,0 +1,25 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap');
+
+:root{
+    --primary-color1: #E7816B;
+    --primary-color2: #1D1C1E;
+    --primary-color3: #FFFFFF;
+    --secondary-color1: #FFAD9B;
+    --secondary-color2:#333136;
+    --secondary-color3:#F1F3F5;
+}
+
+/* body */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* logo */
+
+.designo-logo{
+    width: 202px;
+    height: 27px;
+}
