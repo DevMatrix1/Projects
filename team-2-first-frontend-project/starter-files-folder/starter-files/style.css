@@ -1,0 +1,22 @@
+.navi>li{
+    margin: 0;
+    padding: 12px;
+    display: inline-block;
+}
+.description{
+    background-color: #E7816B;
+    height: 640px;
+    width: 1111px;
+    left: 165px;
+    top: 155px
+    ;
+}
+.phoneimage{
+    background: url(./image-hero-phone.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 1242px;
+    height: 618px;
+    left: 550px;
+    top: 150px;
+}
