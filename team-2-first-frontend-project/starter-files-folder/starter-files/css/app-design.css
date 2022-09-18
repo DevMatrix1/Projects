@@ -80,7 +80,7 @@ nav ul li a:hover{
 }
 
 .header-div{
-    width: 1090px;
+    width: 100%;
     height: 252px;
     background-color: var(--primary-color1);
     border-radius: 15px;
@@ -116,7 +116,9 @@ nav ul li a:hover{
 .projects-container{
     color: black;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .project-container-child{
@@ -170,5 +172,6 @@ nav ul li a:hover{
     z-index: -1;
 }
 
+/* Services Container */
 
 
