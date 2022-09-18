@@ -80,7 +80,7 @@ nav ul li a:hover{
 }
 
 .header-div{
-    width: 1111px;
+    width: 1090px;
     height: 252px;
     background-color: var(--primary-color1);
     border-radius: 15px;
@@ -115,6 +115,8 @@ nav ul li a:hover{
 
 .projects-container{
     color: black;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .project-container-child{
@@ -122,7 +124,8 @@ nav ul li a:hover{
     height: 478px;
     background: #FDF3F0;
     border-radius: 15px;
-    margin-right: 31px;
+    margin-right: 9px;
+    margin-bottom: 32px;;
 }
 
 .project-img{
@@ -143,7 +146,6 @@ nav ul li a:hover{
 }
 
 .project-container-child p{
-    position: absolute;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -151,6 +153,7 @@ nav ul li a:hover{
     text-align: center;
     color: var(--secondary-color2);
     margin: 0px 32px 32px 32px;
+    word-wrap: break-word;
 }
 
 /* Background shadow rectangle */
