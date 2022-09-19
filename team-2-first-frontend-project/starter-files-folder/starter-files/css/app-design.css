@@ -174,4 +174,65 @@ nav ul li a:hover{
 
 /* Services Container */
 
+.services-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.service-img{
+    width: 521px;
+    height: 308px; 
+    margin-right: 7px;
+    border-radius: 15px;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.services-container-child{
+    width: 521px;
+    height: 308px;
+    margin-right: 7px;
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: violet;
+    z-index: +1;
+}
+
+
+.services-container-child h2{
+    color:white;
+    position: absolute;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 48px;
+/* identical to box height, or 120% */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.services-container-child p{
+    color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -10%)
+}
+
+.services-container-child p a{
+    text-decoration: none;
+    color: white;
+    z-index: +2;
+}
+
+.services-container-child p a:hover{
+    text-decoration: none;
+    color: var(--secondary-color1);
+}
 
