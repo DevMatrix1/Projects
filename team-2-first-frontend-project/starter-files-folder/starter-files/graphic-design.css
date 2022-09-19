@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root{
+--graphic-color:#e7816b;
+--white-bg:#ffffff;
+}
+
+.position{
+    position: relative;
+}
+
+.graphic-design{
+position: absolute;
+width: 1111px;
+height: 252px;
+left: 165px;
+top: 155px;
+background-image:linear-gradient(45deg,var(--graphic-color),var(--white-bg)) , url("./assests/graphic-design/desktop/bg-pattern-intro-graphic.svg");
+}
+
+.design{
+width: 730px;
+height: 150px;
+left: 355px;
+top: 219px;
+}
+
+.designs{
+height: 48px;
+font-family: 'Jost';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 48px;
+text-align: center;
+color: var(--white-bg);
+padding: 5rem 10rem;
+}
+
+.brand{
+height: 78px;
+font-family: 'Jost';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 26px;
+text-align: center;
+color: var(--white-bg);
+}
