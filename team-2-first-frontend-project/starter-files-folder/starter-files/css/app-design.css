@@ -19,22 +19,159 @@ body{
     background-color: var(--primary-color3);
 }
 
+h1,h2,ul,h3,p{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 /* logo */
 
 .logo-designo{
     width: 202px;
     height: 27px;
+    margin: 7px 0px;
 }
 
 
-/* ul tags */
-ul{
+/* nav ul tags */
+nav ul{
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Header */
+
+header{
+    display: flex;
+    margin: 64px 135px;
+}
+
+/* for current testing */
+.content{
+    margin:0px 135px;
+}
+footer{
+    margin: 64px 135px;
+}
+
+/* Nav Bar */
+nav{
+    width: 100%;
+    height: 100%;
+}
+
+nav ul li{
+    margin: 7px 0px 7px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--primary-color2);
+    font-size: 14px;
+}
+
+nav ul li a:hover{
+    color: var(--secondary-color1);
+    font-size: 14px;
+}
+
+.header-div{
+    width: 100%;
+    height: 252px;
+    background-color: var(--primary-color1);
+    border-radius: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 160px;
+}
+
+.header-content{
+    margin: 64px 0px;
+    position: absolute;
+    text-align: center;
 }
 
 
+.header-content h2{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    color: var(--primary-color3);
+}
 
+.header-content p{
+    color: var(--primary-color3);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/* Project showcase */
+
+.projects-container{
+    color: black;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.project-container-child{
+    width: 350px;
+    height: 478px;
+    background: #FDF3F0;
+    border-radius: 15px;
+    margin-right: 9px;
+    margin-bottom: 32px;;
+}
+
+.project-img{
+    width: 350px;
+    height: 320px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.project-container-child h2{
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--primary-color1);
+    margin: 32px 32px 16px 32px;
+}
+
+.project-container-child p{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    text-align: center;
+    color: var(--secondary-color2);
+    margin: 0px 32px 32px 32px;
+    word-wrap: break-word;
+}
+
+/* Background shadow rectangle */
+.background-rectangle{
+    position: absolute;
+    width: 1006px;
+    height: 594px;
+    left: 0px;
+    top: 281px;
+    background: var(--secondary-color3);
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    border-radius: 297px 297px 297px 0px;
+    z-index: -1;
+}
+
+/* Services Container */
 
 
