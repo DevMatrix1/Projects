@@ -34,71 +34,72 @@ hr {
   margin: 4rem auto;
   display: flex;
   flex-direction: column;
-  max-width: 24.5vw;
-  max-height: 80vh;
+  max-width: 24rem;
+  max-height: 37rem;
 
   border: 0.1rem solid var(--border-line);
   height: 59.5rem;
-  min-width: 20vw;
+  min-width: 24.5vw;
   border-radius: 5%;
   background-color: var(--card-color);
   filter: drop-shadow(0.75em 0.75em 0.5em);
   padding: 1.2rem;
+  margin-bottom: 0;
 }
 .container__image {
   width: 100%;
 }
 .container__image img {
   max-width: 100%;
-  border-radius: 0.8em;
+  border-radius: 0.8rem;
   display: block;
   align-self: center;
 }
 
 .container__info {
-  width: 33em;
+  width: 33rem;
   max-width: 100%;
 }
 
 .container__info h3 {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   font-weight: bold;
   color: var(--white);
   margin: 1.5em 0;
 }
 
 .container__info p {
-  font-size: 1.1em;
+  font-size: 1.1rem;
   max-width: 100%;
   color: var(--text-color);
 }
 
 .price-time-info {
-  margin-top: 1em;
+  margin-top: 1rem;
   max-width: 100%;
 }
 
 #eth {
   color: var(--cyan);
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 #clock {
   position: relative;
-  right: -11em;
+  right: -11rem;
   color: var(--soft-blue);
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
 .container__profile {
   color: var(--text-color);
   display: flex;
-  font-size: 0.9em;
-  margin: 0.6em 0;
+  font-size: 0.9rem;
+  margin: 0.6rem 0;
 }
 
 .container__profile span img {
-  height: 1.4em;
-  margin-right: 1em;
+  height: 1.4rem;
+  margin-right: 1rem;
 }
 
 .container__profile p span {
@@ -106,5 +107,8 @@ hr {
 }
 
 footer {
+  margin: 2rem auto;
   color: var(--white);
+  font-size: 1rem;
+  font-weight: bold;
 }
