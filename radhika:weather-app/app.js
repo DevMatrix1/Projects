@@ -5,6 +5,20 @@ let selectedCity;
 let selectedCityText;
 const daysOfWeek = ['Sat','Sun','Mon','Tue','Wed','Thur','Fri']
 const searchInput = document.querySelector("#search");
+const body = document.querySelector("body");
+
+// if current time is more than 7pm - night sky image, else morningsky image
+let current_h = Number(new Date().getHours());
+console.log("print current_h 12 line:  ",current_h)
+if (current_h >= 19 || current_h < 5){
+    console.log("print current_h: ",current_h)
+    body.style.background = `url(nightonw.jpg)`;
+    body.style.backgroundSize = `cover`;
+    body.style.backgroundPosition= `center center`;
+    body.style.backgroundAttachment= `fixed`;
+    body.style.color= `white`;
+}
+
 
 
 // helper functions

@@ -1,13 +1,20 @@
+# Weather App 
+
+🔗Live Link: [https://weather-app-radhika.netlify.app/](https://weather-app-radhika.netlify.app/)
+</code>
 
 
-# Welcome Hackers!
-Whether this is your first or tenth time participating in Hacktoberfest, we invite you to contribute to this open source project.
-## General Info
-This repository is made for people who are willing to submit their development project as an open source contribution for Hacktoberfest. The purpose of this is to create a space where people can get started, ask for help, and contribute as much as possible.
-## Contributing
-- If this is your first time contributing to an open source project, we recommend reading this <a href="https://docs.github.com/en/get-started/quickstart/github-flow" target="_blank">GitHub Flow guide</a>.
-- For your contributions, create a folder with your name. In this folder, you will make subdirectories for each of your projects.
-- When submitting a pull request you can ask us to review your code, and we will give feedback including suggested improvements.
-- **Don't hesitate to upload any project** be it a starter project or not. Try contributing as much as possible. The first thing is to get started and ask for help.
-### Happy hacking, people!
+## Features 💫
 
+- Widgets showing current weather, hourly forecast, 5-day forecast, humidity and feels like temp. 
+- Initial data is fetched by current device location
+- User can search city to fetch weather for any location
+- Customized background image based on system's time and light/dark mode for system
+
+
+## Technologies Used 🛠️
+
+1. Vanilla Javascript
+2. HTML
+3. CSS
+4. OpenWeather API : https://openweathermap.org/api
