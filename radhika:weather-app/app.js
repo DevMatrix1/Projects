@@ -187,7 +187,7 @@ let loadDataUsingCurrentGeoLocation = () => {
 }
 
 async function getCityNamesListFromApi(searchValue){
-    let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${API_key}`)
+    let response = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${API_key}`)
     let data = response.json()
     // let {name} = data;
     // console.log('name deconstructed:',name)
