@@ -1,6 +1,7 @@
 const API_key = '2a16455e3a7c72ec497e6199e53fa01c';
 let units_used = "metric"
 let city = "delhi"
+let selectedCity;
 const daysOfWeek = ['Sat','Sun','Mon','Tue','Wed','Thur','Fri']
 const SearchInput = document.querySelector("#search");
 
@@ -20,6 +21,7 @@ const SearchInput = document.querySelector("#search");
 //     SearchInput.addEventListener("input",getCityNamesFromGeoData)
 // })
 
+
 // helper functions
 
 // create format for all temperature fields with degree and 1 decimal place
@@ -29,9 +31,11 @@ let formatTemperature = (temp) => `${temp?.toFixed(1)}°`;
 let createIconImage = (icon) => `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 
-async function getCurrentWeatherData(){
+async function getCurrentWeatherData(selectedCity){
        // API call and response in JSON for first card - current Weather
-    return await (await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=${units_used}`)).json();
+    let url = lat && lon ? `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}&units=${units_used}` : `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=${units_used}`;
+    let response = await fetch(url);
+    return await response.json()
 }
 
 
@@ -145,9 +149,37 @@ let loadFiveDayForecast = async (hourlyWeather) => {
     
 }
 
+// function doSomething(latcoords, longcoords) {
+//     console.log('coords obtained:',latcoords,longcoords)
+// }
+
+let loadDataUsingCurrentGeoLocation = () => {
+    // navigator.geolocation.getCurrentPosition(({position})=>{
+    //     console.log("positioncoords:",position)
+    //     // let {latitude,longitude} = positioncoords;
+    //     let lat = position.coords.latitude;
+    //     let lon = position.coords.longitude;
+    //     selectedCity = {lat,lon} ;
+    //     console.log("selectedcity:",selectedCity)
+    // },error =>console.log(error))
+    navigator.geolocation.getCurrentPosition((position) => {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+        selectedCity = {lat,lon};
+        console.log("selectedcity:",selectedCity)
+        loadData();
+      },error =>console.log(error));
+
+}
+
 document.addEventListener("DOMContentLoaded",async function() {
+    loadDataUsingCurrentGeoLocation();
+   
+})
+
+let loadData = async () => {
     // console.log(await getCurrentWeatherData(),'this was currentWeather api DATA')
-    let currentWeather = await getCurrentWeatherData()
+    let currentWeather = await getCurrentWeatherData(selectedCity)
     loadCurrentForecastData(currentWeather);
     // console.log(await hourlyWeatherFiveDayData(),'this was HOURLY Weather api Data')
     let hourlyWeather = await hourlyWeatherFiveDayData()
@@ -155,4 +187,4 @@ document.addEventListener("DOMContentLoaded",async function() {
     loadFiveDayForecast(hourlyWeather);
     loadFeelsLike(currentWeather);
     loadHumidity(currentWeather);
-})
+}

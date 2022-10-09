@@ -22,8 +22,7 @@ body {
     margin: 0;
     max-width: 800px;
     font-family: Arial, Helvetica, sans-serif;
-    margin: auto;
-    margin-top: var(--spacing-medium);
+    margin: var(--spacing-medium) auto;
     width: 90vw;
     text-align: center;
     background: url(daybg.jpg) no-repeat;
