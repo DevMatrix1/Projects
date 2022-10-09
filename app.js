@@ -1,6 +1,6 @@
 const API_key = '2a16455e3a7c72ec497e6199e53fa01c';
 let units_used = "metric"
-let city = "delhi"
+// let city = "delhi"
 let selectedCity;
 const daysOfWeek = ['Sat','Sun','Mon','Tue','Wed','Thur','Fri']
 const SearchInput = document.querySelector("#search");
@@ -48,9 +48,10 @@ let loadCurrentForecastData = ({name,main: {temp,temp_min,temp_max},weather: [{d
     currentForecastElement.querySelector(".min-max").textContent = `H: ${formatTemperature(temp_max)} L: ${formatTemperature(temp_min)}`;
 }
 
-let hourlyWeatherFiveDayData = async () =>{
+let hourlyWeatherFiveDayData = async (currentWeather) =>{
     // API call and response in JSON for second card - hourly weather - 1 avg call for every 3 hours in  5 days i.e. 40 calls
     // api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_key}&units=${units_used}
+    let city = currentWeather.name;
     let response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${API_key}&units=${units_used}`)
     return await response.json();
 }
@@ -182,7 +183,7 @@ let loadData = async () => {
     let currentWeather = await getCurrentWeatherData(selectedCity)
     loadCurrentForecastData(currentWeather);
     // console.log(await hourlyWeatherFiveDayData(),'this was HOURLY Weather api Data')
-    let hourlyWeather = await hourlyWeatherFiveDayData()
+    let hourlyWeather = await hourlyWeatherFiveDayData(currentWeather)
     loadHourlyForecast(currentWeather,hourlyWeather);
     loadFiveDayForecast(hourlyWeather);
     loadFeelsLike(currentWeather);
