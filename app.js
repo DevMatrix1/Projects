@@ -2,8 +2,9 @@ const API_key = '2a16455e3a7c72ec497e6199e53fa01c';
 let units_used = "metric"
 // let city = "delhi"
 let selectedCity;
+let selectedCityText;
 const daysOfWeek = ['Sat','Sun','Mon','Tue','Wed','Thur','Fri']
-const SearchInput = document.querySelector("#search");
+const searchInput = document.querySelector("#search");
 
 // async function getCityNamesFromGeoData(event){
 //     let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${event.target}&limit=5&appid=${API_key}`)
@@ -33,9 +34,16 @@ let createIconImage = (icon) => `http://openweathermap.org/img/wn/${icon}@2x.png
 
 async function getCurrentWeatherData(selectedCity){
        // API call and response in JSON for first card - current Weather
+    console.log("consoling lat,lon seperately from getCurrentWeatherData before API call: ",lat,lon)
+    // if (city?.length){
+    //     console.log("consoling city seperately from getCurrentWeatherData before API call: ",city)
+    // }
     let url = lat && lon ? `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}&units=${units_used}` : `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_key}&units=${units_used}`;
     let response = await fetch(url);
-    return await response.json()
+    let data = await response.json()
+    console.log("lat,lon,city from getCurrentWeatherData:",selectedCity)
+    console.log("fetching data after city/lat/lon deletection",data)
+    return data
 }
 
 
@@ -173,10 +181,69 @@ let loadDataUsingCurrentGeoLocation = () => {
 
 }
 
-document.addEventListener("DOMContentLoaded",async function() {
-    loadDataUsingCurrentGeoLocation();
+async function getCityNamesListFromApi(searchValue){
+    let response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${searchValue}&limit=5&appid=${API_key}`)
+    let data = response.json()
+    // let {name} = data;
+    // console.log('name deconstructed:',name)
+    return data
+
+}
+async function loadCityNamesIntoOptions(event){
+    let value = event.target.value
+    console.log("city entered in search:",value)
+    // assign values incase of no values entered
+    if (!value){
+        selectedCity = null;
+        selectedCityText = "";
+    }
+    if (value){
+        // fetch cities array from API
+        let citiesList = await getCityNamesListFromApi(value);
+        console.log('cities list from api response on input value: ',citiesList)
+        // load array into datalist html as options
+        let innerHTMLData = "";
+        let citiesDropDown = document.querySelector("#cities");
+        for (let {name, state, country,lat,lon} of citiesList){
+            innerHTMLData += `<option latlonname="${lat},${lon},${name}" value="${name},${state},${country}"></option>`
+        }
+        console.log("innerhtml data for drop down: ", innerHTMLData)
+        citiesDropDown.innerHTML = innerHTMLData;   
+    }
+}
+
+async function loadDataAfterCitySelection(event){
+    selectedCityText = event.target.value
+    console.log('selectedCityText:',selectedCityText)
+    // select attribute for option selected by comparing if selectedcitytext and item in options is equal
+    const optionsList = document.querySelectorAll("#cities > option")
+    // option element.attribute.nodeValue = lat-lon-name = "23.22,74.22,Pune"
+    // console.log("options html from line 213: ",optionsList)
+    // convert nodeList to array becoz nodelist is not iterable
+    if (optionsList?.length){
+        let optionsListArray = Array.from(optionsList)
+        console.log("ARRAY of options  html from line 214: ",optionsListArray)
+        optionsListArray.map((optionObject)=>{
+        // console.log('optionObject.attributes.value.nodeValue:', optionObject.attributes.value.nodeValue)
+        if (optionObject.attributes.value.nodeValue === selectedCityText) {
+            let requiredString = optionObject.attributes.latlonname.value;
+            console.log('requiredString:',requiredString)
+            let [lat, lon,city] = requiredString.split(',');
+            selectedCity = {lat,lon,city}
+            console.log('selectedCity from line 228 inside loadDataAfterCitySelection',selectedCity)
+            loadData()
+            }
+        })      
+    }
+    
+    // for (let [key,value] in optionsListArray){
+    //     console.log('iterating array: ',value)
+    // }
    
-})
+    
+}
+
+
 
 let loadData = async () => {
     // console.log(await getCurrentWeatherData(),'this was currentWeather api DATA')
@@ -189,3 +256,13 @@ let loadData = async () => {
     loadFeelsLike(currentWeather);
     loadHumidity(currentWeather);
 }
+
+document.addEventListener("DOMContentLoaded",async function() {
+    // load data as per current location of user
+    loadDataUsingCurrentGeoLocation();
+    // add event listener for search input, search for city and show relevant cities in dropdown
+    searchInput.addEventListener("input",loadCityNamesIntoOptions)
+    // add event listener in case of selection from dropdown in search input 
+    searchInput.addEventListener("change",loadDataAfterCitySelection)
+   
+})
