@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Silkscreen:wght@400;700&display=swap');
+
+:root{
+    --primary-color: rgb(37, 27, 55);
+    --secondary-color: rgb(55, 41, 72);
+    --third-color: rgb(255, 202, 202);
+    --fourth-color: rgb(255, 236, 239);
+    --font-family-1: 'Silkscreen', cursive;
+    --font-family-2: 'Bungee Spice', cursive;
+    --pa-width: 30vw;
+    --pa-height: 80vh;
+    --hover: #{adjust-hue($color, 45deg)};
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--font-family-1);
+}
+
+body{
+    color: var(--third-color);
+    background: url(attachments/3685.jpg);
+}
+
+.header{
+    font-family: var(--font-family-2);
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.header h1{
+    font-size: 2rem;
+}       
+
+.playing-area #gameScore{
+    top: 0;
+    position: absolute;
+    width: 100%;
+    background: transparent;
+    z-index: 5;
+    color: var(--fourth-color);
+    text-align: center;
+    font-family: var(--font-family-2);
+    font-size: 3rem;
+}
+
+.main-content{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.playing-area{
+    width: var(--pa-width);
+    height: var(--pa-height);
+    overflow: hidden;
+    background-color: var(--third-color);
+    position: relative;
+    border-radius: 0.5rem;
+
+}
+
+.playing-area div{
+    display: flex;
+}
+
+.playing-area div span{
+    height: calc(var(--pa-height)  / 4);
+    width: calc(var(--pa-width) / 4);
+    background-color: var(--third-color);
+    text-align: center;
+    padding-top: calc(calc(calc(var(--pa-height)  / 4)/2) - calc(1rem));
+    border-left: 1px solid var(--secondary-color);
+    border-right: 1px solid var(--secondary-color);
+    font-weight: bolder;
+}
+
+.exit-btn,.play-btn{
+    width: 10%;
+    height: 10%;
+    border-radius: 0.5rem; 
+}
+.exit-btn{
+    position: absolute; top: 50%; left:40%;
+}
+
+.end-game-pop{
+    z-index: 10;
+}
+
+.play-btn{
+    position: absolute; top: 50%; left:22%;
+    width: max-content;
+    font-family: var(--font-family-1);
+    padding: 0px 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    border: none;
+    color: royalblue;
+    font-weight: 700;
+}
+.play-btn:hover,
+.play-btn:focus{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+
+}
+
+.game-over-message{
+    display: block;
+    position: absolute; top: 30%; left:27%;
+    font-family: var(--font-family-1);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.game-over-score{
+    display: block;
+    position: absolute; top: 40%; left:22%;
+    font-family: var(--font-family-1);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+  .end-game-pop {
+    animation: party 5s infinite;
+  }
+  
+  @keyframes party{
+      25% {background-color: rgb(233, 69, 96);}
+      50% {background-color: rgb(83, 52, 131);}
+      75% {background-color: rgb(175, 1, 113);}
+      100% {background-color: rgb(15, 52, 96);} 
+  }
+  
+
+@media (width <= 300px){
+    :root{
+        --pa-width: 100vw;
+    }
+}
+
+
+@media (300px < width <= 450px){
+    :root{
+        --pa-width: 85vw;
+    }
+}
+
+@media (width>450px) {
+    :root{
+        --pa-width: 20rem;
+    }
+    
+    .header h1{
+        font-size: 3rem;
+    }       
+
+}
+
+@media (width>830px) {
+    :root{
+        --pa-width: 20rem;
+    }
+
+}
+
+
+
+ 
