@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+</head>
+<body>
+  <div class="container">
+    <div class="container__heading">
+      <!-- <h1 class="heading__part1">SPLI</h1>
+      <h1 class="heading__part2">TTER</h1> -->
+      <h1><img src="../images/logo.svg" alt="heading"></h1>
+    </div>
+   
+    <section class="card">
+      <section class="calculate">
+        <div id="container__bill">
+          <div id="container__bill_heading">
+            <h2 id="bill__heading">Bill</h2><p class="error-message" id="bill-error"></p>
+          </div>
+          <div class="input-container">
+            <span><img src="../images/icon-dollar.svg" alt="dollar icon" class="icon"></span><input id="bill-input" class="editable-span" placeholder="0" type="number" >
+          </div>
+        </div>
+        <div id="container__tip">
+          <div id="container__tip_heading">
+            <h2 id="tip__heading">Select Tip %</h2><p class="error-message" id="tip-error"></p>
+          </div>
+          <div id="container__tip__container">
+            <button class="tip-btn" value="5">5%</button>
+            <button class="tip-btn" value="10">10%</button>
+            <button class="tip-btn" value="15">15%</button>
+            <button class="tip-btn" value="25">25%</button>
+            <button class="tip-btn" value="50">50%</button>
+            <input type="number" placeholder="Custom" id="tip-input" class="input-container" type="number" >
+          </div>
+        </div>
+        <div id="container__people">
+          <div id="container__people_heading">
+            <h2 id="nppl__heading">Number of People</h2><p class="error-message" id="nppl-error"></p>
+          </div>
+          
+          <div class="input-container" >
+            <span><img src="../images/icon-person.svg" alt="ppl icon" class="icon"></span><input id="nof-people" class="editable-span" placeholder="0" type="number" >
+          </div>
+        </div> 
+      </section>
+
+      <section class="display">
+        <div class="container_display_tiptotal">
+          <div id="container_display_tip">
+            <div>
+              <div class="container_display_titlefield">Tip Amount</div>
+              <div class="per-person">/ person</div>
+            </div> 
+            <div class="container_amount">$<span id="tip-amount-per-person">0.00</span></div>
+          </div>
+          <div id="container_display_total">
+            <div>
+              <div class="container_display_titlefield">Total</div>
+              <div class="per-person">/ person</div>
+            </div>
+            <div class="container_amount">$<span id="total-per-person">0.00</span></div>
+          </div>
+        </div>
+        <button id="reset-btn">RESET</button>
+      </section>
+    </section>
+  </div>
+  
+
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/radhika2104" target="_blank">Radhika</a>.
+  </div> -->
+  <script src="app.js" type="text/javascript"></script>
+</body>
+</html>
