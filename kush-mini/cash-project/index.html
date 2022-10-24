@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Cash Register</title>
+  </head>
+
+  <body>
+    <header>
+        <h1>CASH REGISTER</h1>
+        <div class="header-container">
+
+            <section class="section-left">
+
+              <div class="input-section">
+                <p>Bill Amount</p>
+                <input type="text" type="number" placeholder="Enter Total Bill" id="first-input" >
+                <br>
+                <button class="next nxt">Next</button>
+                <button class="reset first-reset">Reset</button>
+              </div>
+              
+              
+
+              <div class="input-section">
+                <p>Cash Given</p>
+                <input type="text" type="number" placeholder="Enter your Amount" id="second-input" >
+                <br>
+                <button class="next check" >Check</button>
+                <button class="reset second-reset">Reset</button>
+              </div>
+
+
+
+            </section>
+
+            <section class="section-right">
+
+              <div class="section-right-valuebox">
+
+              <div>
+                <h2 class="label-bill">0</h2>
+                <p>Bill</p>
+              </div>
+
+              <div>
+                <h2 class="label-paid">0</h2>
+                <p>Paid</p>
+              </div>
+
+
+              <div>
+                <h2 class="label-returned">0</h2>
+                <p>Returned</p>
+              </div>
+
+            </div>
+
+
+              
+              <table>
+                <tr>
+                  <thead>
+                      <th>Note</th>
+                      <th>No.of Notes</th>
+                  </thead>
+
+                  <tbody>
+                    <tr>
+                      <td>2000</td>
+                      <td class="two-thousand">0</td>
+                    </tr>
+                    <tr>
+                      <td>500</td>
+                      <td class="five-hundred">0</td>
+                    </tr>
+                    <tr>
+                      <td>200</td>
+                      <td class="two-hundred">0</td>
+                    </tr>
+                    <tr>
+                      <td>100</td>
+                      <td class="one-hundred">0</td>
+                    </tr>
+                    <tr>
+                      <td>50</td>
+                      <td class="fifty">0</td>
+                    </tr>
+                    <tr>
+                      <td>20</td>
+                      <td class="twenty">0</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td class="ten">0</td>
+                    </tr>
+                    <tr>
+                      <td>5</td>
+                      <td class="five">0</td>
+                    </tr>
+                    <tr>
+                      <td>2</td>
+                      <td class="two">0</td>
+                    </tr>
+                    <tr>
+                      <td>1</td>
+                      <td class="one">0</td>
+                    </tr>
+                  </tbody>
+                </tr>
+              </table>
+
+              
+
+            </section>
+        </div>
+    </header>
+
+    <script src="js/script.js"></script>
+  </body>
+ 
+</html>
