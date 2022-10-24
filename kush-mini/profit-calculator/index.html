@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Stock</title>
+  </head>
+  <body>
+      <header>
+          <h1>Check Your Stock Status</h1>
+          <div class="header-container">
+
+            <section class="section-left">
+
+                <div class="box">
+                    <p>Purchase Price</p>
+                    <input type="text" type="number" placeholder="Enter Cost Price Of Stock" id="purchase-input" >
+                </div>
+
+                <div class="box">
+                    <p>Stock Quantity</p>
+                    <input type="text" type="number" placeholder="Enter Quantity Of Stock" id="quantity" >
+                </div>
+
+                <div class="box">
+                    <p>Current Price</p>
+                    <input type="text" type="number" placeholder="Enter Current Price Of Stock" id="current-price-input" >
+                </div>
+
+                <div class="button-div">
+                    <button id="check-btn">Check</button>
+                </div>
+            </section>
+
+
+            <section class="section-right">
+
+                <div class="box">
+                    <h2 id="label-percentage">0%</h2>
+                    <p id="label-percentage-value">Loss</p>
+                </div>
+
+                <div class="box">
+                    <h2 id="total-loss">0</h2>
+                    <p id="label-total-loss-value">Total Loss</p>
+                </div>
+
+                <div class="image-box lossimg">
+                    <img  src="images/loss.svg" alt="profit">
+                 </div>
+
+                <div class="image-box gainimg">
+                     <img  src="images/profit.svg" alt="profit">
+                </div>
+
+            </section>
+
+          </div>
+      </header>
+
+      <script src="js/script.js"></script>
+  </body>
+</html>
